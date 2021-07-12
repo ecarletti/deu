@@ -9,6 +9,5 @@ export default () => {
     // set map
     let sceneMap = divElement.querySelector('#sceneMap')
     sceneMap.src = scene;
-    console.log(createTrashes())
     return divElement
 };
