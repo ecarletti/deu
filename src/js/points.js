@@ -10,28 +10,37 @@ export function startGamePoints (display, context) {
   //  context.querySelector('#backgroundImage').style.backgroundImage = "url(" + config.GAME_BACKGROUND + ")";  
   context.querySelector('#options_and_time').style.display='block'
 
-
-  var intervalTimer = setInterval(function () {
-    randomImages();
-    if (points == -50){
-      clearInterval(intervalTimer);
-      deleteAllImg();
-      gameOver();
-    }
-    if (points_to_win == points){
-        clearInterval(intervalTimer);
-        deleteAllImg();
-        gameWin();
-    }
-
-    display.textContent = 'Puntos: ' + points; 
-
-    // if (--points < 0) {
-    //     localPoints = 0
+  if(config.game_status){ 
+    var intervalTimer = setInterval(function () {
       
-    // }
+        randomImages();
+        if (points == -50){
+          clearInterval(intervalTimer);
+          deleteAllImg();
+          gameOver();
+          config.game_status = false
+        }
+        if (points_to_win == points){
+            clearInterval(intervalTimer);
+            deleteAllImg();
+            gameWin();
+            config.game_status = false
+        }
 
-  }, 1000)
+        window.addEventListener("hashchange", () => {
+          clearInterval(intervalTimer);
+          config.game_status = false
+        });
+
+        display.textContent = 'Puntos: ' + points; 
+
+        // if (--points < 0) {
+        //     localPoints = 0
+          
+        // }
+    
+    }, 1000)
+}
 
 }
 
@@ -40,22 +49,16 @@ export function startGamePoints (display, context) {
 // linkListener funcion onClick de cada imagen (Basura)
 export function linkListenerTrash() {
   this.remove()
-  let aux = new Audio('../resources/sound/effect-error.mp3');
-  aux.play();
-  audio_right.play();
-  console.log(audio_right)
-
+  if (config.effect_checked) { audio_right.play();}
   points = points + 10;
   decreaseCountTrashItemsImg();
-  //countTrashItemsImg--;
 
 }
 
 export function linkListenerObject() {
     this.remove()
-    audio_error.play();
+    if (config.effect_checked) { audio_error.play(); }
     points = points - 10;
-    // countOtherItemsImg--;
     decreaseCountOtherItemsImg();
   
   }

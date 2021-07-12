@@ -1,9 +1,13 @@
 import view from '../views/game.html'
 import {startGamePoints} from '../js/points'
+import { music } from '../js/music'
+import { config } from '../js/config';
 
 export default () => {
+    config.game_status = true
     const divElement = document.createElement('div')
     divElement.innerHTML = view
+    music(false);
 
     // const btnClick = divElement.querySelector('#btnClick');
     // btnClick.addEventListener('click', () => { alert('click') })

@@ -1,3 +1,7 @@
+import effect_error from '../resources/sound/effect-error.mp3'
+import effect_right from '../resources/sound/effect-right.mp3'
+// import music_index from '../resources/sound/index.mp3'
+
 export var config = {
     //Imagenes de Background
     INTRO_BACKGROUND: "../resources/images/introgame1.png",
@@ -6,12 +10,17 @@ export var config = {
     GAME_BACKGROUND:"../resources/images/background1-1024.png",
     //Imagenes de Background
 
+    // estado de juego
+    game_status:false,
 
     // Puntos
     POINTS_TO_WIN: 100,
     // Puntos
 
-
+    // music
+    music_status: true,
+    music_checked:true,
+    effect_checked:true,
     // Tiempo
     TIMER: false,
     TIME_REMAINING: 60 * 5, // 5 min
@@ -19,14 +28,8 @@ export var config = {
     HIDDEN_OBJECT_NOT_FOUND: 20,
     // Tiempo
 };
-// CONST
-const gallery = document.getElementById('gallery')
-const backgroundImage =document.getElementById('backgroundImage')
-const canvas = document.getElementById('canvas')
 
-export const audio_error = new Audio('../resources/sound/effect-error.mp3');
+export const audio_error = new Audio(effect_error);
 audio_error.volume = 0.3;
-export const audio_right = new Audio('../resources/sound/effect-right.mp3');
+export const audio_right = new Audio(effect_right);
 audio_right.volume = 0.2;
-export const audio_index = new Audio('../resources/sound/index.mp3');
-audio_index.volume= 0.1;
