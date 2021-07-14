@@ -4,10 +4,40 @@
         <p id="font_time"><span id="time"></span></p>
         <div class="right">
           <button class="btn" onclick="location.href = '#'"><i class="fas fa-power-off fa-3x mb-2"></i></button>
-          <button class="btn" onclick="location.href = '#/config'"><i class="fas fa-cog fa-3x"></i></button>
+          <button type="button" class="btn" data-backdrop="static" data-keyboard="false"   data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fas fa-cog fa-3x"></i></button>
         </div>
       </div>
         <div class="gallery" id="gallery">
         </div>
+        
       </div> 
 
+
+
+
+
+<!-- Modal -->
+<div  class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Configuracion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label class="container-checkbox " style="margin-top: 1em;">Música.
+          <input type="checkbox" checked="checked" id="config_music" >
+          <span class="checkmark" style="outline: auto;"></span>
+        </label>  
+        <label class="container-checkbox" style="margin-top: 1em;">Efectos de sonido.
+          <input type="checkbox" checked="checked" id="config_effect_sound">
+          <span class="checkmark" style="outline: auto;"></span>
+        </label> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+      </div>
+    </div>
+  </div>
+</div>

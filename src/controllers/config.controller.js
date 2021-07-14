@@ -24,7 +24,7 @@ export default () => {
     return divElement
 };
 
-function effect_controller(config_effect_sound) {
+export function effect_controller(config_effect_sound) {
     config_effect_sound.addEventListener('click', () => {
         if (config.effect_checked) {
             config.effect_checked = false;
@@ -35,7 +35,7 @@ function effect_controller(config_effect_sound) {
     });
 }
 
-function music_controller(config_music) {
+export function music_controller(config_music) {
     config_music.addEventListener('click', () => {
         if (config.music_status) {
             config.music_status = false;

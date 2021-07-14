@@ -4,11 +4,12 @@ var audio = layout.querySelector("#music");
 
 
 export function music(on) {
+    music_volume(0.1);
     // and music on
     if (audio.src != music_index && on) {
-        
+       
         audio.autoplay = true;
-        audio.volume= 0.1;
+        
         audio.loop=true;
         audio.load()
         audio.addEventListener("load", function() { 
@@ -27,4 +28,8 @@ export function music(on) {
     //     audio.pause()
     // }
     
+}
+
+export function music_volume(number){
+    audio.volume = number;
 }

@@ -14,7 +14,7 @@ export var config = {
     game_status:false,
 
     // Puntos
-    POINTS_TO_WIN: 100,
+    POINTS_TO_WIN: 50,
     // Puntos
 
     // music

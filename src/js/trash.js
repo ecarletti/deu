@@ -1,6 +1,5 @@
 import {createDivGallery} from './grid'
 import {linkListenerTrash} from './points'
-
 import trash1 from '../resources/images/trash/monton_de_basura.png'
 import trash2 from '../resources/images/trash/bolsa_de_basura_1.png'
 import trash3 from '../resources/images/trash/cajas_rotas.png'
@@ -10,7 +9,9 @@ import trash6 from '../resources/images/trash/diarios_1.png'
 import trash7 from '../resources/images/trash/diarios_2.png'
 import trash8 from'../resources/images/trash/lata_de_gaseosa.png'
 
-const numberMaxofTrash = 8;
+export var trash= [0,1,2,3,4,5,6,7]
+
+export const numberMaxofTrash = 8;
 
 var textArray = [ trash1,trash2,trash3,trash4,trash5,trash6,trash7,trash8 ];
 
@@ -34,19 +35,22 @@ function descriptionTrash(n) { return altArray[n] ;}
 
   // crea dinamicamente: <gallery> <div><img/></div> </gallery>
 export function createImgElement(){
-    var newDiv = createDivGallery();
+    var newDiv = createDivGallery()
+    trash.sort(function() {return Math.random() - 0.5})
+    var number = trash.pop();
+    newDiv.id = "div_img_trash_" + number ;
     gallery.appendChild(newDiv)
-    var img = generateTrashImg();
+    var img = generateTrashImg(number, newDiv.className);
     newDiv.appendChild(img);
   }
   
 
- export  function generateTrashImg(){
+ export  function generateTrashImg(number, className){
     var img = new Image(100, 100);
-    var number = randomNumberTrash();
     img.id= "img_trash_" + number ;
     img.src = pathTrash(number);
     img.class="gallery__img";
+    img.name= className
     img.alt= descriptionTrash(number);
     img.onclick = linkListenerTrash;
     return img;

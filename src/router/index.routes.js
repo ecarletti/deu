@@ -15,7 +15,15 @@ const router = (route) => {
         case '#/config':
             return content.appendChild(pages.config());
         case '#/game':
-            return content.appendChild(pages.game());    
+            return content.appendChild(pages.game());
+        case '#/game/win':
+            return content.appendChild(pages.win());   
+        case '#/game/lose':
+            return content.appendChild(pages.lose());
+        case '#/tutorial/1':
+            return content.appendChild(pages.tutorial1());
+        case '#/tutorial/2':
+            return content.appendChild(pages.tutorial2());                          
     }
 
 };
