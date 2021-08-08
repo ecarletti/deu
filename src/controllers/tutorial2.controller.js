@@ -17,6 +17,7 @@ import object5 from '../resources/images/object/perro-bulldog.png'
 import object6 from '../resources/images/object/perro-pitbull.png'
 import object7 from '../resources/images/object/perro-salchicha.png'
 import {altObjectArray} from '../js/object'
+import person from '../resources/images/tutorial.png'
 
 
 
@@ -25,8 +26,10 @@ export default () => {
     const divElement = document.createElement('div')
     divElement.innerHTML = view
     var div = divElement.querySelector('#win_img')
-    // div.style.backgroundImage=  "url("+win_image+")"; 
-    div.style.backgroundColor=  "white"; 
+    
+    div.style.backgroundImage = "url("+person+")";
+    div.style.width='1024px'
+    div.style.height='728px'
     var img1 = divElement.querySelector('#trash1')
     var img2 = divElement.querySelector('#trash2')
     var img3 = divElement.querySelector('#trash3')

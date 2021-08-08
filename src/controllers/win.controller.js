@@ -1,5 +1,5 @@
 import view from '../views/game_win.html'
-import win_image from '../resources/images/win-1024.jpg'
+import win_image from '../resources/images/winimagefull.png'
 
 
 

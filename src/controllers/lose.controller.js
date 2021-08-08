@@ -1,5 +1,5 @@
 import view from '../views/game_lose.html'
-import lose_image from '../resources/images/gameover-1.jpg'
+import lose_image from '../resources/images/loseimagefull.png'
 
 
 

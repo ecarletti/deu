@@ -75,6 +75,12 @@ export function linkListenerTrash() {
 
 }
 
+export function linkListenerObjectS(){
+  alert("roman")
+
+}
+
+
 export function linkListenerObject() {
     var divId = 'div_' + this.id
     var { totalDiv, newDiv } = selectDivs(divId,'square-error','-10');

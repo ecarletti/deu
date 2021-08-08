@@ -1,5 +1,5 @@
 import {createDivGallery} from './grid'
-import {linkListenerObject} from './points'
+import {linkListenerObject, linkListenerObjectS} from './points'
 
 export const numberMaxofObject = 7;
 export var objects = [0,1,2,3,4,5,6]
@@ -49,8 +49,10 @@ export  function createObjectImgElement(){
     img.src = pathObject(number);
     img.class="gallery__img";
     img.name= className
+    img.role= "button"
     img.alt= descriptionObject(number);
     img.onclick = linkListenerObject;
+    img.onkeypress = linkListenerObjectS;
     return img;
   }
 
