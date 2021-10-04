@@ -54,7 +54,7 @@ export function startGamePoints (display, context) {
 // linkListener funcion onClick de cada imagen (Basura)
 export function linkListenerTrash() {
   var divId = 'div_' + this.id
-  var { totalDiv, newDiv } = selectDivs(divId,'square-right','+10');
+  var { totalDiv, newDiv } = selectDivs(divId,'square-right','+10','Respuesta correcta!');
   // me quedo con el ultimo caracter de la cadena, el id del string
   trash.push(this.id.slice(-1));
   trash.sort(function() {return Math.random() - 0.5})
@@ -75,15 +75,9 @@ export function linkListenerTrash() {
 
 }
 
-export function linkListenerObjectS(){
-  alert("roman")
-
-}
-
-
 export function linkListenerObject() {
     var divId = 'div_' + this.id
-    var { totalDiv, newDiv } = selectDivs(divId,'square-error','-10');
+    var { totalDiv, newDiv } = selectDivs(divId,'square-error','-10','Respuesta incorrecta!');
     objects.push(this.id.slice(-1));
     objects.sort(function() {return Math.random() - 0.5})
     this.remove()
@@ -101,12 +95,16 @@ export function linkListenerObject() {
     decreaseCountOtherItemsImg();
   }
 
-  function selectDivs(divId, classHtml ,points) {
+  function selectDivs(divId, classHtml ,pointsAux, textAlert) {
     var totalDiv = document.querySelector('#' + divId);
     var newDiv = document.createElement("div");
     newDiv.className = classHtml;
     newDiv.id = classHtml;
-    newDiv.innerHTML = points;
+    newDiv.innerHTML = pointsAux;
+    newDiv.setAttribute("aria-label", textAlert )
+    newDiv.setAttribute("aria-live", "assertive")
+    newDiv.setAttribute("role", "alert")
+    console.log(newDiv);
     return { totalDiv, newDiv };
   }
 

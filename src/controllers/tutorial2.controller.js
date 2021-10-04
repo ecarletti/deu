@@ -16,9 +16,9 @@ import object4 from '../resources/images/object/motocicleta-celeste.png'
 import object5 from '../resources/images/object/perro-bulldog.png'
 import object6 from '../resources/images/object/perro-pitbull.png'
 import object7 from '../resources/images/object/perro-salchicha.png'
-import {altObjectArray} from '../js/object'
+import {altObjectArray as altObject} from '../js/object'
 import person from '../resources/images/tutorial.png'
-
+import { altArray as altTrash }  from '../js/trash'
 
 
 
@@ -40,13 +40,21 @@ export default () => {
     var img8 = divElement.querySelector('#trash8')
 
     img1.src= trash1
+    img1.alt= altTrash[0]
     img2.src= trash2
+    img2.alt= altTrash[1]
     img3.src= trash3
+    img3.alt= altTrash[2]
     img4.src= trash4
+    img4.alt= altTrash[3]
     img5.src= trash5
+    img5.alt= altTrash[4]
     img6.src= trash6
+    img6.alt= altTrash[5]
     img7.src= trash7
+    img7.alt= altTrash[6]
     img8.src= trash8
+    img8.alt= altTrash[7]
 
     var imgO1 = divElement.querySelector('#object1')
     var imgO2 = divElement.querySelector('#object2')
@@ -57,12 +65,19 @@ export default () => {
     var imgO7 = divElement.querySelector('#object7')
 
     imgO1.src= object1
+    imgO1.alt= altObject[0]
     imgO2.src= object2
+    imgO2.alt= altObject[1]
     imgO3.src= object3
+    imgO3.alt= altObject[2]
     imgO4.src= object4
+    imgO4.alt= altObject[3]
     imgO5.src= object5
+    imgO5.alt= altObject[4]
     imgO6.src= object6
+    imgO6.alt= altObject[5]
     imgO7.src= object7
+    imgO7.alt= altObject[6]
     
     return divElement
 };

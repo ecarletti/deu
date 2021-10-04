@@ -28,9 +28,11 @@ export function effect_controller(config_effect_sound) {
     config_effect_sound.addEventListener('click', () => {
         if (config.effect_checked) {
             config.effect_checked = false;
+            config_effect_sound.setAttribute("aria-checked", "false")
         }
         else {
             config.effect_checked = true;
+            config_effect_sound.setAttribute("aria-checked", "true")
         }
     });
 }
@@ -41,11 +43,13 @@ export function music_controller(config_music) {
             config.music_status = false;
             music(config.music_status);
             config.music_checked = false;
+            config_music.setAttribute("aria-checked", "false")
         }
         else {
             config.music_status = true;
             music(config.music_status);
             config.music_checked = true;
+            config_music.setAttribute("aria-checked", "true")
         }
     });
 }

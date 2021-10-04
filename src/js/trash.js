@@ -15,7 +15,7 @@ export const numberMaxofTrash = 8;
 
 var textArray = [ trash1,trash2,trash3,trash4,trash5,trash6,trash7,trash8 ];
 
-var altArray = [
+export var altArray = [
     'Monton de basura',
     'Bolsas de basura',
     'Cajas rotas',

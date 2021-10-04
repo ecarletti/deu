@@ -3,12 +3,14 @@
         <div id="options_and_time">
         <p id="font_time"><span id="time"></span></p>
         <div class="right">
-          <button class="btn" onclick="location.href = '#'"><i class="fas fa-power-off fa-3x mb-2"></i></button>
-          <button type="button" class="btn" data-backdrop="static" data-keyboard="false"   data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button class="btn"  aria-label="Salir del juego" onclick="location.href = '#'"><i class="fas fa-power-off fa-3x mb-2"></i></button>
+          <button type="button" aria-label="Configuracion del juego" class="btn" data-backdrop="static" data-keyboard="false"   data-bs-toggle="modal" data-bs-target="#exampleModal">
             <i class="fas fa-cog fa-3x"></i></button>
         </div>
       </div>
-        <div class="gallery" id="gallery">
+      
+        <div class="gallery" id="gallery" aria-label="A continuacion se encuentran los objetos en la calle" >
+          
         </div>
         
       </div> 
@@ -18,12 +20,12 @@
 
 
 <!-- Modal -->
-<div  class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div  class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="Modal Configuracion" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Configuracion</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
         <label class="container-checkbox " style="margin-top: 1em;">Música.
